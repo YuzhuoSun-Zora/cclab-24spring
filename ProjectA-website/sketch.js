@@ -23,13 +23,14 @@ let windowDistY;
 function setup() {
   let cnv = createCanvas(800, 500);
   cnv.parent("p5-canvas-container");
-  background(220);
+  background(225);
   noStroke();
   canvaX = 400;//random(0, width - 300);
   canvaY = 200;//random(0, height - 200);
   windowX = 200;//random(0, width - 200);
   windowY = 200;//random(0, height - 300);
   stepSize = 15;
+
 }
 
 function draw() {
