@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+#canvasContainer{
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: -1;
+}
+
+#scrollDiv{
+  width: 200px;
+  height: 3000vh;
+  background-color: blue;
+  outline: 5px red dashed;
+}
+

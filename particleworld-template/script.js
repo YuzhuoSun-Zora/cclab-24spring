@@ -65,6 +65,11 @@ function mousePressed(){
   for(let i = 0; i < 4; i++){
     ripple[i] = new Ripple(mouseX,mouseY,random(80));
   }
+  for (let i = 0; i < particles.length; i++) {
+    let p = particles[i];
+    p.checkIfScared();
+   
+  }
 }
 
 class Particle {
@@ -84,6 +89,9 @@ class Particle {
     this.fishPosY = [];
     this.fishAngle;
     this.fishDist;
+    this.c = "orange";
+    this.normalSpeed = 0.0025;
+    this.actualSpeed = this.normalSpeed;
 
   }
   // methods (functions): particle's behaviors
@@ -93,24 +101,28 @@ class Particle {
     this.y = map(noise(this.speedVarY),0,1,-100,height+100);//this.speedY;
     // this.speedX += map(noise(this.speedVarX),0,1,-1,1);
     // this.speedY += map(noise(this.speedVarY),0,1,-1,1);
-    this.speedVarX += 0.0025;
-    this.speedVarY +=0.0025;
+    this.actualSpeed = lerp(this.actualSpeed, this.normalSpeed, 0.02)
+    if(abs(this.actualSpeed-this.normalSpeed) < 0.001 ){
+      this.c = "orange"
+    }
+    this.speedVarX += this.actualSpeed;
+    this.speedVarY += this.actualSpeed;
 
     this.fishPosX.push(this.x);
     this.fishPosY.push(this.y);
-    this.fishDist = dist(mouseX,mouseY,this.x,this.y);
+
     if(this.fishPosX.length>=4){
       this.fishPosX.splice(0,1);
       this.fishPosY.splice(0,1);
     }
+
     if(this.fishPosX.length>=3){
       this.fishDiffX = this.fishPosX[2]-this.fishPosX[1];
       this.fishDiffY = this.fishPosY[2]-this.fishPosY[1];
       this.fishAngle = atan2(this.fishDiffY,this.fishDiffX)
     }
-    if(mouseIsPressed && this.fishDist<=80){
-      
-    }
+
+    
   }
   display(){
     // particle's appearance
@@ -130,12 +142,19 @@ class Particle {
     rotate(this.fishAngle);
     }
     noStroke();
-    fill("orange")
+    fill(this.c)
     // circle(0, 0, this.dia);
 
     ellipse(0,0,40,15);
     triangle(-15,0,-35,-5,-35,5)
     pop();
+  }
+  checkIfScared(){
+    this.fishDist = dist(mouseX,mouseY,this.x,this.y);
+    if(this.fishDist<=80){
+      this.c = "blue";
+      this.actualSpeed = this.normalSpeed*5;
+    }
   }
 }
 

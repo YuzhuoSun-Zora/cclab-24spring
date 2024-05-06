@@ -1,0 +1,141 @@
+html,
+body {
+  height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+canvas {
+  display: block;
+}
+
+#canvasContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#scrollDiv {
+  position: relative;
+  top: 0;
+  left: 8%;
+  width: 800px;
+  height: 1000vh;
+
+  /* outline: 5px red dashed; */
+}
+
+#scrollDive2 {
+  position: relative;
+  top: 0;
+  right: 50px;
+  width: 800px;
+  height: 1000vh;
+  outline: 5px red dashed;
+}
+
+
+
+#startButton {
+  position: absolute;
+  background-color: rgb(250, 240, 202);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+}
+
+#startButton a {
+  text-decoration: none;
+  font-size: 100px;
+  color: rgb(50, 31, 20);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.projectTitle {
+  color: rgb(50, 31, 20);
+  font-size: 160px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.intro {
+  color: rgb(50, 31, 20);
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* text-align: right;
+  margin-right: 10%; */
+}
+
+.spacer1 {
+  width: 400px;
+  height: 70vh;
+}
+
+.spacer2 {
+  width: 400px;
+  height: 100vh;
+}
+
+.spacer3 {
+  width: 400px;
+  height: 200vh;
+}
+
+.spacer4 {
+  width: 400px;
+  height: 20vh;
+}
+
+.ending {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: right;
+  margin-right: 17%;
+}
+
+.ending2 {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: right;
+  position: absolute;
+  right: 17%;
+  /* 调整按钮到右侧的距离 */
+  transform: translateY(-50%);
+}
+
+
+.back-to-top {
+  position: absolute;
+  top: 7200px;
+  left: 100px;
+}
+
+.back-to-top a {
+  color: tomato;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.back-to-top a:hover {
+  color: purple;
+}
