@@ -72,7 +72,7 @@ function setup() {
 
 
 
-  tooth1 = new Tooth1(width / 2 + 300, height / 2.8);
+  tooth1 = new Tooth1(width / 2 + 300, height / 3.5);
   mouth = new Mouth(width / 2 + 250, height / 2 + 200);
   floor = new Floor(width / 2, height)
   toothToMountain = new ToothToMountain(width / 2, height / 2, 0.3, 0);
@@ -143,6 +143,7 @@ function draw() {
   currentTime = millis();
   // console.log(toothToTheBottom, pickingTrigger, mouseOnTooth)
   // console.log(sheepOff.length)
+  console.log(windowWidth, windowHeight)
   if (fallingTrigger == true) {
 
     mouth.update();
